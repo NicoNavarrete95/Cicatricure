@@ -1,0 +1,450 @@
+<div class="before-section invisible">
+  <div class="section-title">
+      <span><img src="https://iili.io/JERD3Tx.png" alt=""></span><h1>PRODUCTOS DESTACADOS</h1>    
+  </div>
+  </div>
+<div class="before-section_2">
+  {{!-- <div id="info-section" class="info-home-section invisible">
+        <div class="info-container">
+          <div class="info-item">
+            <img src="https://iili.io/J12jiLQ.png" alt="">
+            <p>LIBRE DE TESTEOS EN ANIMALES</p>
+          </div>
+          <div class="info-item">
+            <img src="https://iili.io/J12j6Ij.png" alt="">
+            <p>IDEAL PARA EL USO DIARIO</p>
+          </div>
+          <div class="info-item">
+            <img src="https://iili.io/J12jPhx.png" alt="">
+            <p>APROBADO POR DERTMATÓLOGOS Y GINECÓLOGOS</p>
+          </div>
+        </div>
+      </section>
+  </div> --}}
+
+  <div class="lineas-home-section invisible">
+        <div class="section-title">
+          <span><img src="https://iili.io/JERD3Tx.png" alt=""></span><h1>LÍNEAS DESTACADAS</h1>
+        </div>
+        <div class="lineas-container">
+          <div class="lineas-item">
+            <a href="/p/gold-lift"><img src="https://iili.io/JEGUM8X.png" alt="gold lift"></a>          
+            </div>
+          <div class="lineas-item">
+            <a href="/p/porcelana"><img src="https://iili.io/JEGUEFI.png" alt="porcelana"></a>          
+            </div>
+          <div class="lineas-item">
+            <a href="/p/antiarrugas"><img src="https://iili.io/JEGUW9n.png" alt="age care"></a>         
+            </div>
+          <div class="lineas-item">
+            <a href="/p/cicatrices"><img src="https://iili.io/JEGUGat.png" alt="cicatrices"></a>
+          </div>
+        </div>
+      </section>
+  </div>
+</div>
+
+  <div id="footer-container">
+  {{#if subscriptionFooter.active}}
+    {{> legend/views/partials/suscription}}
+  {{/if}}
+  <footer class="legend-footer-contact-container header--custom-background">
+    <div class="legend-footer-contact">
+      <div class="legend-footer-contact-logo header--custom-text">
+        <div>
+          {{#if logo}}
+          <a class="nav-legend-header__logo" href="/" id="logo-wrapper">
+            <span class="nav-header__title-hidden">{{name}}</span>
+            <img class="nav-header__image" src="{{logo}}" alt="{{name}}" itemprop="logo" />
+          </a>
+          {{else}}
+          <h3 class="nav-footer-contact-title header--custom-text">
+            <a href="/">{{name}}</a>
+          </h3>
+          {{/if}}
+        </div>
+        {{#if showLogoCaption}}
+        <div class="legend-footer__brand-col header--custom-text">
+          {{#if logoCaption}}
+          <p class="legend-footer__logo-caption">{{{logoCaption}}}</p>
+          {{/if}}
+        </div>
+        {{/if}}
+      </div>
+      <div class="nav-bounds nav-bounds--contact">
+        {{#if showSocialMedia}}
+        <div>
+          <div class="legend-footer__social-media">
+            {{#each socialNetworks}}
+            <a href="{{url}}" target="_blank" class="header--custom-svg header--svg" rel="noopener noreferrer nofollow">
+              {{> (concat 'legend/views/partials/icons/' (lookup . 'name'))}}
+            </a>
+            {{/each}}
+          </div>
+        </div>
+        {{/if}}
+        <div class="legend-footer__contact-col legend-list--spacing">
+          {{#if showContact}}
+          <ul class="legend-footer__contact header--custom-border"></ul>
+          {{#if showPhone}}
+          <li>
+            <a class="header--custom-text" itemprop="telephone" href="tel:{{phone.raw}}" rel="nofollow">
+              <span>{{phone.formatted}}</span>
+            </a>
+          </li>
+          {{/if}}
+          {{#if showEmail}}
+          <li>
+            <a class="header--custom-text" itemprop="email" href="mailto:{{email}}" rel="nofollow">
+              <span>{{email}}</span>
+            </a>
+          </li>
+          {{/if}}
+          {{#if showAddress}}
+          <li>
+            <a class="header--custom-text" itemprop="streetAddress">
+                <span>{{address.address}}</span>
+                <span>{{address.city}}</span>
+                <span>{{address.state}}</span>
+            </a>
+          </li>
+          {{/if}}
+          <li class="legend-list--spacing">
+            <a class="legend-list--contact header--custom-text" href="{{contact.href}}" class="contact-button" rel="nofollow">
+              {{> legend/views/partials/contact}} <span>{{contact.label}}</span>
+            </a>
+          </li>
+          {{/if}}
+          {{#if showQrData}}
+          {{#with fiscalData}}
+          <li class="legend-list--spacing">
+            <a href={{qr_link}} target="_F960AFIPInfo">
+              <img class="nav-footer-afip-img" src={{qr_img}} alt="Data fiscal" />
+            </a>
+          </li>
+          {{/with}}
+          {{/if}}
+          <meta itemprop="contactType" content="customer service" />
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="menuFooterIndex wrapper">
+      <div class="dropdown header--custom-border">
+        <div class="dropdown-title header--custom-text">
+          <span>{{dropdown_title_text}}</span>
+          {{> legend/views/partials/icons/dropdown}}
+        </div>
+        <div class="legend-footer__categories-col dropdown-content">
+          {{#each menu}}
+          <span class="legend-footer__category header--custom-text">
+            <a href="{{url}}" data-id="{{id}}" class="header--custom-text" {{#if this.openNewTab}}target="_blank"{{/if}}>
+              {{name}}
+            </a>
+          </span>
+          {{/each}}
+        </div>
+
+        <section class="footer-section">
+        <div class="footer-logo">
+          <a class="nav-legend-header__logo" href="/" id="logo-wrapper">
+            <span class="nav-header__title-hidden">Cicatricure</span>
+            <img class="footer__image" src="https://iili.io/JlsgGwl.png" alt="Cicatricure" itemprop="logo">
+          </a>
+        </div>
+        <div class="footer-section-div">
+          <div class="footer-section-title">
+            <h2 class="footer-section-title-h2">Productos</h2>
+          </div>
+          <div class="footer-section-links footer-section-one">
+            <ul>
+              <a href="/cuidado-facial"><li>Cuidado Facial</li></a>
+              <a href="/cuidado-corporal"><li>Cuidado Corporal</li></a>          
+            </ul>
+          </div>
+        </div>
+        <div class="footer-section-div">
+          <div class="footer-section-title">
+            <h2 class="footer-section-title-h2">Líneas</h2>
+          </div>
+          <div class="footer-section-links">
+            <ul>
+                  <a href="/p/gold-lift">Cicatricure Gold Lift</a>
+                  <a href="/p/antiarrugas">Cicatricure Antiarrugas</a>
+                  <a href="/p/porcelana">Cicatricure Porcelana Antimanchas</a>
+                  <a href="/beauty-care">Cicatricure Beauty Care</a>
+                  <a href="/age-care">Cicatricure Age Care</a>
+                  <a href="/p/cicatrices">Cicatricure Cicatrices y Estrías</a>
+                  <a href="/crema-corporal">Cicatricure Cremas Corporales</a>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-section-div">
+          <div class="footer-section-title">
+            <h2 class="footer-section-title-h2">Redes</h2>
+          </div>
+          <div class="footer-section-links">
+            <div class="Footer__Social HorizontalList HorizontalList--spacingLoose">
+        <a href="" class="Link Link--primary" target="_blank" rel="noopener" aria-label="Facebook desde el pie de página" title="Se abre en una nueva ventana">
+          <span class="Icon-Wrapper--clickable">
+            <img src="https://iili.io/J1n92P1.png" alt=""></span>
+
+      {{!-- <svg class="Icon Icon--facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"></path></svg></span> --}}
+        </a>
+      
+        <a href="" class="Link Link--primary" target="_blank" rel="noopener" aria-label="Instagram desde el pie de página" title="Se abre en una nueva ventana">
+          <span class="Icon-Wrapper--clickable"><img src="https://iili.io/J1n9FKF.png" alt=""></span>
+        </a>
+
+      
+
+    </div>
+          </div>
+        </div>
+      </section>
+
+        {{#if interestLinks}}
+        <div class="legend-footer__links-pages-container">
+          <div class="legend_footer__links-pages header--custom-border">
+            <div class="legend_footer__link-pages__title-container">
+              <h4 class="legend_footer__link-pages__title header--custom-text">{{i18n.interestLinksLabel}}</h4>
+              <div class="legend_footer__link-pages__icon-add">
+                {{> legend/views/partials/icons/add }}
+              </div>
+              <div class="legend_footer__link-pages__icon-substract">
+                {{> legend/views/partials/icons/substract }}
+              </div>
+            </div>
+            <div class="legend_footer__link-pages__links-container">
+              {{#each interestLinks}}
+                <a class="legend_footer__link" href="{{url}}">
+                  {{> legend/views/partials/icons/circle }}
+                  <span class="legend_footer__link-text header--custom-text">{{name}}</span>
+                </a>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+        {{/if}}
+        <div class="footer-help">
+          <a href="https://galarreta.co/" style="color:white">Developed by Galarreta</a>
+          <span class="legend-footer-help__separator header--custom-text"> | </span>
+          {{#if linkToLGPD}}
+          <a href="{{linkToLGPD.href}}" class="header--custom-text">{{linkToLGPD.label}}</a>
+          <span class="legend-footer-help__separator header--custom-text"> | </span>
+          {{/if}}
+          <a href="{{linkToHowBuy.href}}" class="header--custom-text">{{linkToHowBuy.label}}</a>
+          {{#if showBusinessData}}
+          {{#with fiscalData}}
+          
+          <div class="nav-footer-fiscal-data header--custom-text">
+            <p class="nav-footer-fiscal-data__name">{{legal_name}}</p>
+            <p class="nav-footer-fiscal-data__id">{{legal_doc}}</p>
+          </div>
+          {{/with}}
+          {{/if}}
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="legend-footer-info header--custom-background">
+    <div class="nav-footer__icons_generals">
+      <a href="{{{linkToMShopsLandingPage}}}" target="_blank" class="legend-footer-info__brand header--custom-text">
+        <span class="footer-power-by">{{i18n.powered_by}}</span>
+        {{> legend/views/partials/icons/mshops}}
+      </a>
+    </div>
+  </div>
+  </div>
+
+{{!-- <section class="custom sections" style="display: none;">
+<div class="banner-custom_page">
+  <div class="banner-cicatrices_desktop">
+    <img src="https://iili.io/JEqIOa1.png" alt="">
+  </div>
+  <div class="banner-cicatrices_mobile">
+    <img src="https://iili.io/JEqIN3P.png" alt="">
+  </div>
+</div>
+<div class="custom-text-section">
+  <div class="custom-text-section_container">
+    <div class="custom-text-section_img">
+      <img src="https://iili.io/J1R9Z7V.png" alt="">
+    </div>
+    <div class="custom-text-section_text">
+      <div class="custom-text-section_text-title">
+        <h3 class="custom-text-section_text-title-h3">Cicatricure Age Care: Tu aliado en la belleza atemporal</h3>
+      </div>
+      <div class="custom-text-section_text-paragraph">
+        <p class="custom-text-section_text-p">En la travesía de la vida, cada línea en nuestro rostro cuenta una historia, pero eso no signica que no podamos influir en cómo se narran. Cicatricure Age Care se presenta como el condente perfecto para preservar la frescura y vitalidad en la expresión de su rostro. Entendemos que la verdadera belleza no tiene edad y que, a medida que acumulamos experiencias, queremos que nuestra piel refleje una juventud atemporal. Las cremas Age Care de Cicatricure han sido especialmente diseñadas para abrazar la madurez con gracia (...)</p> 
+        <a href="">ver más</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="banner-custom_page">
+  <div class="banner-cicatrices_desktop">
+    <img src="https://iili.io/JEq1VtI.png" alt="">
+  </div>
+  <div class="banner-cicatrices_mobile">
+    <img src="https://iili.io/JEq1MwN.png" alt="">
+  </div>
+</div>
+<div class="custom-text-section">
+  <div class="custom-text-section_container">
+    <div class="custom-text-section_img">
+      <img src="https://iili.io/J1R9Z7V.png" alt="">
+    </div>
+    <div class="custom-text-section_text">
+      <div class="custom-text-section_text-title">
+        <h3 class="custom-text-section_text-title-h3 cicatrices-title">Un Cómplice en la Transformación</h3>
+      </div>
+      <div class="custom-text-section_text-paragraph">
+        <p class="custom-text-section_text-p">Cicatricure, con su enfoque en la innovación y la ciencia, ha creado cremas diseñadas especícamente para ayudar a transformar la apariencia de las cicatrices y estrías. Más que un producto de cuidado de la piel, se convierte en un cómplice en tu viaje hacia la conanza y la aceptación. Cicatricure entiende que cada piel es diferente, y el proceso de desvanecimiento de cicatrices y estrías es único para cada persona. Con paciencia y consistencia, las cremas de Cicatricure se convierten en un acompañante en tu viaje de transformación personal.(...) </p> 
+        <a href="">ver más</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="banner-custom_page">
+  <div class="banner-cicatrices_desktop">
+    <img src="https://iili.io/JEqMFZN.png" alt="">
+  </div>
+  <div class="banner-cicatrices_mobile">
+    <img src="https://iili.io/JEqM3jp.png" alt="">
+  </div>
+</div>
+<div class="custom-text-section">
+  <div class="custom-text-section_container">
+    <div class="custom-text-section_img">
+      <img src="https://iili.io/JEqGVEX.png" alt="">
+    </div>
+    <div class="custom-text-section_text">
+      <div class="custom-text-section_text-title">
+        <h3 class="custom-text-section_text-title-h3 cicatrices-title">Un Cómplice en la Transformación</h3>
+      </div>
+      <div class="custom-text-section_text-paragraph">
+        <p class="custom-text-section_text-p">Cicatricure, con su enfoque en la innovación y la ciencia, ha creado cremas diseñadas especícamente para ayudar a transformar la apariencia de las cicatrices y estrías. Más que un producto de cuidado de la piel, se convierte en un cómplice en tu viaje hacia la conanza y la aceptación. Cicatricure entiende que cada piel es diferente, y el proceso de desvanecimiento de cicatrices y estrías es único para cada persona. Con paciencia y consistencia, las cremas de Cicatricure se convierten en un acompañante en tu viaje de transformación personal.(...) </p> 
+        <a href="">ver más</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section> --}}
+
+{{!-- <div class="banner-custom_page">
+  <div class="banner-custom_desktop"> <img src="https://iili.io/JEPIBiQ.png" alt=""> </div>
+  <div class="banner-custom_mobile"> <img src="https://iili.io/JEPIqWx.png" alt=""> </div>
+</div>
+<div class="custom-text-section_custom-1">
+  <div class="custom-text-section_container no-box-shadow">
+    <div class="custom-text-section_img"> <img src="https://iili.io/JEPIYsR.png" alt=""> </div>
+    <div class="custom-text-section_text">
+      <div class="custom-text-section_text-title">
+        <h3 class="custom-text-section_text-title-h3">Amplia gama de productos</h3>
+      </div>
+      <div class="custom-text-section_text-paragraph">
+        <p class="custom-text-section_text-p">Cicatricure cuenta con una gran variedad de cremas, entre ellas se encuentran la línea Age Care, para cicatrices, contorno de ojos, cremas para la cara y corporales, así como sistemas de tratamiento para combatir las manchas, y uno de nuestros últimos lanzamientos: Cicatricure Gold Lift, con el entendimiento de las pieles más duras, tratando y ayudando a prevenir arrugas gravitacionales</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="custom-text-section_custom-2">
+  <div class="custom-text-section_container no-box-shadow">
+    <div class="custom-text-section_img"> <img src="https://iili.io/JEPI7Wv.png" alt=""> </div>
+    <div class="custom-text-section_text">
+      <div class="custom-text-section_text-title">
+        <h3 class="custom-text-section_text-title-h3">Fórmulas innovadoras</h3>
+      </div>
+      <div class="custom-text-section_text-paragraph">
+        <p class="custom-text-section_text-p">Cada uno de nuestros productos y presentaciones cuentan con fórmulas cuidadosamente diseñadas, conbinando tecnologías innovadoras con ingredientes de alta calidad como: Ácido hialurónico, colágeno y péptidos con oro para lograr resultados reales que se ven y se sienten.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="custom-text-section_custom-3">
+  <div class="section-title">
+      <span><img src="https://iili.io/JERD3Tx.png" alt=""></span><h1>PARA QUIÉN NO ES CICATRICURE</h1>    
+  </div>
+  <div class="custom-text-section_custom-3_p1 custom-text-section_custom-3_p">
+    <p><b>Cicatricure gel actua sobre cicatrices no quelóides menores a 1 año.</b> No se puede usar sobre heridas que aún están abiertas. Asimismo, no es un producto cicatrizante y tampoco funciona de  un día para el otro, <b> necesita constancia </b> y ser aplicado al menos  4 veces al día para obtener los resultados deseados.</p>
+  </div>
+  <div class="custom-text-section_custom-3_p2 custom-text-section_custom-3_p">
+    <p>En cuanto a Cicatricure cuidado facial tenemos muchos productos con diferentes benecios,<b> pero vamos a ir sobre las generalidades:</b></p>
+  </div>
+</div>
+<div class="custom-tarjeta-section">
+  <div class="custom-tarjetas-container">
+    <div class="tarjeta-custom">
+      <div class="tarjeta-custom-img">
+        <img src="https://iili.io/JEPIT5F.png" alt="">
+      </div>
+      <div class="tarjeta-custom-p">
+        <p>Cicatricure no es milagro. No funciona en todas las pieles igua, ni actua de la misma manera. Es importante aplicar de manera adecuada para obtener los resultados deseados</p>
+      </div>
+    </div>
+    <div class="tarjeta-custom">
+      <div class="tarjeta-custom-img">
+        <img src="https://iili.io/JEPIAba.png" alt="">
+      </div>
+      <div class="tarjeta-custom-p">
+        <p>Si tienes piel atópica, presenta irritación o una rosácea severa, es importante acudir a tu médico o dermatólogo. Cicatricure no actúa en este tipo de pieles.</p>
+      </div>
+    </div>
+    <div class="tarjeta-custom">
+      <div class="tarjeta-custom-img">
+        <img src="https://iili.io/JEPIo0B.png" alt="">
+      </div>
+      <div class="tarjeta-custom-p">
+        <p>La mayoría de las cremas Cicatricure cuentan con factor solar, que ayuda a prevenir los daños que puede causar la radiación solar, pero no son un protector</p>
+      </div>
+    </div>
+    <div class="tarjeta-custom">
+      <div class="tarjeta-custom-img">
+        <img src="https://iili.io/JEPI5zJ.png" alt="">
+      </div>
+      <div class="tarjeta-custom-p">
+        <p>Las líneas faciales de Cicatricure fueron desarrolladas para cubrir las necesidades de personas adultas, no fueron creadas para niños.</p>
+      </div>
+    </div>
+    <div class="tarjeta-custom">
+      <div class="tarjeta-custom-img">
+        <img src="https://iili.io/JEPIcfp.png" alt="">
+      </div>
+      <div class="tarjeta-custom-p">
+        <p>Al usar las cremas para el con- torno de ojos como Cicatricure  Blur & Filler, Cicatricure Roll- on Ojos, se debe tener en cuenta que no entren en contacto directo con el ojo</p>
+      </div>
+    </div>
+    <div class="tarjeta-custom">
+      <div class="tarjeta-custom-img">
+        <img src="https://iili.io/JEPI0gI.png" alt="">
+      </div>
+      <div class="tarjeta-custom-p">
+        <p>Con respecto a nuestra cremas para la cara con activosdespigmetates: las cremas Age Care Aclarante y Antimanchas no fueron desarrolladas para su uso en el embarazo</p> 
+      </div>
+    </div>
+  </div>
+  <div class="section-title title-custom-1">
+      <h1>Tomando en cuenta estos aspectos puedes checar que producto es adecuado para tu tipo de piel y condiciones
+      </h1>    
+  </div>
+</div>
+<div class="custom-text-section_custom">
+  <div class="section-title">
+      <span><img src="https://iili.io/JERD3Tx.png" alt=""></span><h1>CUANDO ES PARA TI CONSIDERA TAMBIÉN...</h1>    
+  </div> 
+  <div class="custom-text-section_container">
+    <div class="custom-text-section_img"> <img src="https://iili.io/JEPInfV.png" alt=""> </div>
+    <div class="custom-text-section_text"> 
+      <div class="custom-text-section_text-paragraph">
+        <p class="custom-text-section_text-p">Todos los productos <b> tienen fecha de caducidad </b>, es por esto que importante revisar si están vigentes a la hora de usarlos.</p>
+        <p class="custom-text-section_text-p">Otro aspecto a destacar es que, en el caso de las cremas faciales hay que evitar el uso compartido.</p>
+        <p class="custom-text-section_text-p">Recurda que, tener una rutina Cicatricure que se amolde a las necesidades de tu piel, es tan importante como usar la crema correctamente.</p>
+        <p class="custom-text-section_text-p">Nuestras líneas de producto contribuyen a fomentar una rutina para cuidar tu piel, para que luzca hidratada y ra- diante, ayudando a retrasar lo sigos de la edad. No se trata solo de rellenar líneas de expresión o arrugas.</p>
+      </div>
+    </div>
+  </div>
+</div> --}}
